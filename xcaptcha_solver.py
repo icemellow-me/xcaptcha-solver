@@ -66,7 +66,7 @@ CF_VISION_MODEL = "@cf/meta/llama-3.2-11b-vision-instruct"
 CF_TEXT_MODEL = "@cf/meta/llama-4-scout-17b-16e-instruct"
 
 # Solver state
-SOLVER_API_KEY = os.environ.get("SOLVER_API_KEY", "1")
+SOLVER_API_KEY = os.environ.get("SOLVER_API_KEY", "8010000000ccojr5nrbg516w5jvw1wu9")
 TASK_TIMEOUT = int(os.environ.get("TASK_TIMEOUT", "120"))
 
 
@@ -703,7 +703,8 @@ async def handle_health(request: web.Request):
         "version": "1.0.0",
         "vlm_provider": "cloudflare" if _cf_token() else "none",
         "cf_model": CF_VISION_MODEL if _cf_token() else "",
-        "supported_types": ["text", "custom", "empty"],
+        "supported_types": ["text", "custom", "empty", "dynamics*"],
+        "dynamics_note": "requires browser automation",
     })
 
 
